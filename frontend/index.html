@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Billing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header> Smart Restaurant </header>
+
+<div class="app">
+
+    <!-- MENU SECTION -->
+    <div class="menu">
+        <div class="food-card">
+            <img src="https://img.freepik.com/premium-photo/delicious-cheeseburger-with-fresh-ingredients-served-rustic-wooden-board-perfect-food-photography-advertising_995663-29369.jpg">
+            <h3>Burger</h3>
+            <p>₹100</p>
+            <button onclick="addItem('Burger',100)">Add</button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/027/671/365/small/pepperoni-pizza-on-the-wooden-board-with-dark-lighting-and-black-background-food-and-delivery-concept-generative-ai-free-photo.jpg">
+            <h3>Pizza</h3>
+            <p>₹150</p>
+            <button onclick="addItem('Pizza',150)">Add</button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://www.shutterstock.com/image-photo/photo-club-sandwich-made-turkey-600w-1601443801.jpg">
+            <h3>Sandwich</h3>
+            <p>₹80</p>
+            <button onclick="addItem('Sandwich',80)">Add</button>
+        </div>
+        <div class="food-card">
+            <img src="https://www.foodrepublic.com/img/gallery/30-different-types-of-french-fries-explained-upgrade/traditional-cut-fries-1747434610.jpg">
+            <h3>French Fries</h3>
+            <p>₹100</p>
+            <button onclick="addItem('French Fries',100)">Add</button>
+        </div>
+
+        <div class="food-card">
+            <img src="https://img.jagranjosh.com/images/2025/10/13/article/image/tea-producing-states-1760360681335.webp">
+            <h3>Tea</h3>
+            <p>₹20</p>
+            <button onclick="addItem('Tea',20)">Add</button>
+        </div>
+        <div class="food-card">
+            <img src="https://thumbs.dreamstime.com/b/cup-hot-coffee-foam-sharp-focus-foam-coffee-beans-scattered-background-burlap-background-beautiful-light-photo-345328512.jpg">
+            <h3>Coffee</h3>
+            <p>₹50</p>
+            <button onclick="addItem('coffee',50)">Add</button>
+        </div>
+        <div class="food-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/041/909/529/non_2x/oreo-milkshake-with-oreo-biscuits-almond-served-in-glass-side-view-on-wooden-table-morning-meal-photo.jpg">
+            <h3> Oreo Milkshake</h3>
+            <p>₹150</p>
+            <button onclick="addItem('oreo Milkshake',150)">Add</button>
+        </div>
+        <div class="food-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHya3OCsaVAI74fyDzccwvv1IvN1mm-IlpwQ&s">
+            <h3>Rosemilk</h3>
+            <p>₹150</p>
+            <button onclick="addItem('Rosemilk',150)">Add</button>
+        </div>
+         
+    </div>
+
+    <!-- BILLING SECTION -->
+    <div class="bill">
+        <h2>🧾 Current Bill</h2>
+
+        <div id="billItems"></div>
+
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
+
+        <button class="pay-btn" onclick="showQR()">Pay via QR</button>
+        <button class="print-btn" onclick="window.print()">Print / Download</button>
+        <button class="cancel-btn" onclick="cancelOrder()">Cancel</button>
+    </div>
+
+</div>
+
+<!-- QR MODAL -->
+<div class="modal" id="qrModal">
+    <div class="modal-content">
+        <h3>Scan to Pay</h3>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg">
+        <button onclick="closeQR()">Close</button>
+    </div>
+</div>
+
+<!-- Firebase SDK (v9.22.0) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
